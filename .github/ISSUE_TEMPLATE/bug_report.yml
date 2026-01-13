@@ -1,0 +1,87 @@
+name: Bug Report
+description: Report a defect with clear steps and evidence
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken? One or two sentences.
+      placeholder: "Duplicate email registration returns 500 instead of 409."
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did it happen?
+      placeholder: |
+        OS:
+        Browser (if UI):
+        Client (Postman/curl):
+        API Base URL:
+        Build/Commit:
+    validations:
+      required: true
+
+  - type: textarea
+    id: precondition
+    attributes:
+      label: Precondition
+      description: What must be true before reproducing?
+      placeholder: "A user exists with email dup_test@gmail.com."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Numbered, deterministic steps.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: What should happen? Include status codes/messages if API.
+      placeholder: "409 Conflict + error_code=EMAIL_ALREADY_EXISTS + no new user created."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+      description: What happened instead?
+      placeholder: "500 Internal Server Error."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Paste request/response, screenshots, logs, etc.
+      placeholder: |
+        Request:
+        Response:
+        Logs:
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Suspected Cause (optional)
+      description: Hypothesis only, not a claim.
+      placeholder: "Possible unhandled unique constraint violation."
+    validations:
+      required: false
